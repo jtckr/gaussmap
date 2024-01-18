@@ -29,27 +29,21 @@ class Parameterization:
 class CatenoidParameterization(Parameterization):
     """A parameterization of a catenoid centered at the origin."""
 
-    @staticmethod
     def _x(u: float, v: float) -> float:
         return 2 * np.cosh(0.5 * v) * np.cos(u)
 
-    @staticmethod
     def _y(u: float, v: float) -> float:
         return 2 * np.cosh(0.5 * v) * np.sin(u)
 
-    @staticmethod
     def _z(u: float, v: float) -> float:
         return v
 
-    @staticmethod
     def _normal_x(u: float, v: float) -> float:
         return 2 * np.cos(u) * np.cosh(0.5 * v)
 
-    @staticmethod
     def _normal_y(u: float, v: float) -> float:
         return 2 * np.sin(u) * np.cosh(0.5 * v)
 
-    @staticmethod
     def _normal_z(u: float, v: float) -> float:
         return -1 * np.sinh(v)
 
@@ -93,27 +87,21 @@ class CatenoidParameterization(Parameterization):
 class ConeParameterization(Parameterization):
     """A parameterization of an upper half cone centered along the z-axis."""
 
-    @staticmethod
     def _x(u: float, v: float) -> float:
         return v * np.cos(u)
 
-    @staticmethod
     def _y(u: float, v: float) -> float:
         return v * np.sin(u)
 
-    @staticmethod
     def _z(u: float, v: float) -> float:
         return v
 
-    @staticmethod
     def _normal_x(u: float, v: float) -> float:
         return v * np.cos(u)
 
-    @staticmethod
     def _normal_y(u: float, v: float) -> float:
         return v * np.sin(u)
 
-    @staticmethod
     def _normal_z(u: float, v: float) -> float:
         return v
 
@@ -142,27 +130,21 @@ class ConeParameterization(Parameterization):
 class CylinderParameterization(Parameterization):
     """A parameterization of a cylinder centered along the z-axis."""
 
-    @staticmethod
     def _x(u: float, v: float) -> float:
         return np.cos(u)
 
-    @staticmethod
     def _y(u: float, v: float) -> float:
         return np.sin(u)
 
-    @staticmethod
     def _z(u: float, v: float) -> float:
         return v
 
-    @staticmethod
     def _normal_x(u: float, v: float) -> float:
         return np.cos(u)
 
-    @staticmethod
     def _normal_y(u: float, v: float) -> float:
         return np.sin(u)
 
-    @staticmethod
     def _normal_z(u: float, v: float) -> float:
         return 0
 
@@ -190,27 +172,21 @@ class CylinderParameterization(Parameterization):
 class HyperbolicParaboloidParameterization(Parameterization):
     """A parameterization of a hyperbolic paraboloid centered at the origin."""
 
-    @staticmethod
     def _x(u: float, v: float) -> float:
         return u
 
-    @staticmethod
     def _y(u: float, v: float) -> float:
         return v
 
-    @staticmethod
     def _z(u: float, v: float) -> float:
         return u * v
 
-    @staticmethod
     def _normal_x(u: float, v: float) -> float:
         return -1 * np.cos(u) * np.sin(v) ** 2
 
-    @staticmethod
     def _normal_y(u: float, v: float) -> float:
         return -1 * np.sin(u) * np.sin(v) ** 2
 
-    @staticmethod
     def _normal_z(u: float, v: float) -> float:
         return -0.5 * np.sin(2 * v)
 
@@ -242,27 +218,21 @@ class HyperbolicParaboloidParameterization(Parameterization):
 class HyperboloidParameterization(Parameterization):
     """A parameterization of a hyperboloid centered along the z-axis."""
 
-    @staticmethod
     def _x(u: float, v: float) -> float:
         return np.cosh(u) * np.cos(v)
 
-    @staticmethod
     def _y(u: float, v: float) -> float:
         return np.cosh(u) * np.sin(v)
 
-    @staticmethod
     def _z(u: float, v: float) -> float:
         return np.sinh(u)
 
-    @staticmethod
     def _normal_x(u: float, v: float) -> float:
         return -1 * np.cos(v) * np.cosh(u) ** 2
 
-    @staticmethod
     def _normal_y(u: float, v: float) -> float:
         return -1 * np.sin(v) * np.cosh(u) ** 2
 
-    @staticmethod
     def _normal_z(u: float, v: float) -> float:
         return 0.5 * np.sinh(2 * u)
 
@@ -306,27 +276,21 @@ class HyperboloidParameterization(Parameterization):
 class MonkeySaddleParameterization(Parameterization):
     """A parameterization of a monkey saddle centered at the origin."""
 
-    @staticmethod
     def _x(u: float, v: float) -> float:
         return u
 
-    @staticmethod
     def _y(u: float, v: float) -> float:
         return v
 
-    @staticmethod
     def _z(u: float, v: float) -> float:
         return u**3 - 3 * u * v**2
 
-    @staticmethod
     def _normal_x(u: float, v: float) -> float:
         return -3 * u**2 + 3 * v**2
 
-    @staticmethod
     def _normal_y(u: float, v: float) -> float:
         return 6 * u * v
 
-    @staticmethod
     def _normal_z(u: float, v: float) -> float:
         return 1
 
@@ -362,27 +326,21 @@ class MonkeySaddleParameterization(Parameterization):
 class ParaboloidParameterization(Parameterization):
     """A parameterization of a paraboloid opening towards negative z."""
 
-    @staticmethod
     def _x(u: float, v: float) -> float:
         return v * np.cos(u)
 
-    @staticmethod
     def _y(u: float, v: float) -> float:
         return v * np.sin(u)
 
-    @staticmethod
     def _z(u: float, v: float) -> float:
         return -1 * v**2
 
-    @staticmethod
     def _normal_x(u: float, v: float) -> float:
         return -2 * v**2 * np.cos(u)
 
-    @staticmethod
     def _normal_y(u: float, v: float) -> float:
         return -2 * v**2 * np.sin(u)
 
-    @staticmethod
     def _normal_z(u: float, v: float) -> float:
         return -1 * v
 
@@ -415,27 +373,21 @@ class ParaboloidParameterization(Parameterization):
 class RingTorusParameterization(Parameterization):
     """A parameterization of a torus with major radius 3 and minor radius 1."""
 
-    @staticmethod
     def _x(u: float, v: float) -> float:
         return (3 + np.cos(u)) * np.cos(v)
 
-    @staticmethod
     def _y(u: float, v: float) -> float:
         return (3 + np.cos(u)) * np.sin(v)
 
-    @staticmethod
     def _z(u: float, v: float) -> float:
         return np.sin(u)
 
-    @staticmethod
     def _normal_x(u: float, v: float) -> float:
         return -1 * (3 + np.cos(u)) * np.cos(u) * np.cos(v)
 
-    @staticmethod
     def _normal_y(u: float, v: float) -> float:
         return -1 * (3 + np.cos(u)) * np.cos(u) * np.sin(v)
 
-    @staticmethod
     def _normal_z(u: float, v: float) -> float:
         return -1 * (3 + np.cos(u)) * np.sin(u)
 
@@ -479,27 +431,21 @@ class RingTorusParameterization(Parameterization):
 class SphereParameterization(Parameterization):
     """A parameterization of a sphere with radius 1 centered at the origin."""
 
-    @staticmethod
     def _x(u: float, v: float) -> float:
         return np.cos(u) * np.sin(v)
 
-    @staticmethod
     def _y(u: float, v: float) -> float:
         return np.sin(u) * np.sin(v)
 
-    @staticmethod
     def _z(u: float, v: float) -> float:
         return np.cos(v)
 
-    @staticmethod
     def _normal_x(u: float, v: float) -> float:
         return -1 * np.sin(v) ** 2 * np.cos(u)
 
-    @staticmethod
     def _normal_y(u: float, v: float) -> float:
         return -1 * np.sin(v) ** 2 * np.sin(u)
 
-    @staticmethod
     def _normal_z(u: float, v: float) -> float:
         return -1 * np.cos(v) * np.sin(v)
 
