@@ -35,7 +35,7 @@ jobs:
 
       - name: Test with pytest
         run: |
-          pytest --cov=gaussmap --cov-report xml tests
+          pytest --cov=gaussmap --cov-report xml
 
       - name: Coveralls
         uses: coverallsapp/github-action@v2
