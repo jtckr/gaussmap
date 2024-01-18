@@ -36,9 +36,17 @@ jobs:
       - name: Test with pytest
         run: |
           pytest --cov=gaussmap --cov-report xml
+          COVERAGE=$(./bin/parse_coverage ./coverage.xml)
+          printf "COVERAGE=$COVERAGE" >> $GITHUB_ENV
 
-      - name: Coveralls
-        uses: coverallsapp/github-action@v2
+      - name: Create coverage badge
+        uses: schneegans/dynamic-badges-action@v1
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          path-to-lcov: coverage.xml
+          auth: ${{ secrets.GIST_TOKEN }}
+          gistID: 7be5f58c655e9488e8944068ea14f294
+          filename: coverage.json
+          label: coverage
+          message: ${{ env.COVERAGE }}
+          valColorRange: ${{ env.COVERAGE }}
+          minColorRange: 50
+          maxColorRange: 90
