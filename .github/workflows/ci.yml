@@ -20,7 +20,8 @@ jobs:
 
       - name: Install system dependencies
         run: |
-          sudo apt install -y libcairo2-dev libpango1.0-dev ffmpeg \
+          sudo apt update && \
+          apt install -y libcairo2-dev libpango1.0-dev ffmpeg \
             numpy sympy mypy isort pytest python-pytest-cov
 
       - name: Install package dependencies
