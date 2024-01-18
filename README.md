@@ -1,9 +1,16 @@
 # Gauss map
 
+[![GitHub license](https://img.shields.io/github/license/jtckr/gaussmap)](https://github.com/jtckr/gaussmap/blob/main/LICENSE)
+[![Coveralls branch](https://img.shields.io/coverallsCoverage/github/jtckr/gaussmap)](https://coveralls.io/github/jtckr/gaussmap)
+[![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/jtckr/gaussmap/ci.yml)](https://github.com/jtckr/gaussmap/actions/workflows/ci.yml)
+
+
 `gaussmap` is a Python package that generates
 [Manim](https://www.manim.community) animations showing the
 [Gauss map](https://en.wikipedia.org/wiki/Gauss_map) transformation of a
 parameteric surface in 3D.
+
+![Catenoid animation](assets/catenoid_scene.gif)
 
 ## Dependencies
 
