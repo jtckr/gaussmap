@@ -11,10 +11,10 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout the repository
-        uses: actions/checkout@latest
+        uses: actions/checkout@v4
 
       - name: Setup Python
-        uses: actions/setup-python@latest
+        uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python }}
 
@@ -37,7 +37,7 @@ jobs:
           pytest --cov=gaussmap --cov-report xml tests
 
       - name: Coveralls
-        uses: coverallsapp/github-action@latest
+        uses: coverallsapp/github-action@v2
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           path-to-lcov: coverage.xml
