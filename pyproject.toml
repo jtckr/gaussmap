@@ -8,9 +8,9 @@ version = "1.0.0"
 dependencies = [
     "manim>=0.10.0",
     "numpy>=1.21.0",
-    "sympy>=1.1",
+    "sympy>=1.11",
 ]
-requires-python = ">=3.7"
+requires-python = ">=3.8"
 authors = [
     {name = "Jeffrey Tucker", email = "jtckr@mathbf.com"},
 ]
@@ -28,7 +28,6 @@ classifiers = [
     "Operating System :: POSIX",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3 :: Only",
-    "Programming Language :: Python :: 3.7",
     "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
@@ -56,5 +55,5 @@ notebook = ["notebook"]
 packages = ["gaussmap"]
 
 [[tool.mypy.overrides]]
-module = ["manim"]
+module = ["manim", "sympy"]
 ignore_missing_imports = true

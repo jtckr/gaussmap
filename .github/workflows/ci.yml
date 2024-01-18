@@ -7,7 +7,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        python: ['3.7', '3.8', '3.9', '3.10', '3.11', '3.12']
+        python: ['3.8', '3.9', '3.10', '3.11', '3.12']
     runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout the repository
@@ -20,12 +20,13 @@ jobs:
 
       - name: Install system dependencies
         run: |
-          sudo apt install -y libcairo2-dev libpango1.0-dev ffmpeg \
-            numpy sympy mypy isort pytest python-pytest-cov
+          sudo apt update && \
+            sudo apt install -y libcairo2-dev libpango1.0-dev ffmpeg
 
       - name: Install package dependencies
         run: |
-          python -m pip install .
+          python -m pip install .[test,coverage,style]
+          python -m pip install setuptools
 
       - name: Lint with Mypy, isort
         run: |

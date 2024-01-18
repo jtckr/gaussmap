@@ -1,23 +1,8 @@
 import numpy as np
 import pytest
 import sympy as sym
-from sympy import (
-    cos,
-    cosh,
-    cot,
-    coth,
-    csc,
-    csch,
-    exp,
-    log,
-    pi,
-    sec,
-    sech,
-    sin,
-    sinh,
-    tan,
-    tanh,
-)
+from sympy import (cos, cosh, cot, coth, csc, csch, exp, log, pi, sec, sech,
+                   sin, sinh, tan, tanh)
 from sympy.abc import u, v
 
 from gaussmap import parameterizations

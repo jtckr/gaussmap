@@ -59,9 +59,9 @@ class CatenoidParameterization(Parameterization):
         v,
     )
     vectorization: Vectorization = (
-        np.vectorize(_x),
-        np.vectorize(_y),
-        np.vectorize(_z),
+        np.vectorize(_x.__get__(object)),
+        np.vectorize(_y.__get__(object)),
+        np.vectorize(_z.__get__(object)),
     )
     partial_u_expression: Expression = (
         -2 * sym.cosh(0.5 * v) * sym.sin(u),
@@ -79,9 +79,9 @@ class CatenoidParameterization(Parameterization):
         -sym.sinh(v),
     )
     normal_vectorization: Vectorization = (
-        np.vectorize(_normal_x),
-        np.vectorize(_normal_y),
-        np.vectorize(_normal_z),
+        np.vectorize(_normal_x.__get__(object)),
+        np.vectorize(_normal_y.__get__(object)),
+        np.vectorize(_normal_z.__get__(object)),
     )
     u_range: Range = (-np.pi, np.pi)
     v_range: Range = (-2, 2)
@@ -119,17 +119,17 @@ class ConeParameterization(Parameterization):
 
     expression: Expression = (v * sym.cos(u), v * sym.sin(u), v)
     vectorization: Vectorization = (
-        np.vectorize(_x),
-        np.vectorize(_y),
-        np.vectorize(_z),
+        np.vectorize(_x.__get__(object)),
+        np.vectorize(_y.__get__(object)),
+        np.vectorize(_z.__get__(object)),
     )
     partial_u_expression: Expression = (-v * sym.sin(u), v * sym.cos(u), sym.sympify(0))
     partial_v_expression: Expression = (sym.cos(u), sym.sin(u), sym.sympify(1))
     normal_expression: Expression = (v * sym.cos(u), v * sym.sin(u), -v)
     normal_vectorization: Vectorization = (
-        np.vectorize(_normal_x),
-        np.vectorize(_normal_y),
-        np.vectorize(_normal_z),
+        np.vectorize(_normal_x.__get__(object)),
+        np.vectorize(_normal_y.__get__(object)),
+        np.vectorize(_normal_z.__get__(object)),
     )
     u_range: Range = (0, 2 * np.pi)
     # 0.01 is used to avoid singular point.
@@ -168,17 +168,17 @@ class CylinderParameterization(Parameterization):
 
     expression: Expression = (sym.cos(u), sym.sin(u), v)
     vectorization: Vectorization = (
-        np.vectorize(_x),
-        np.vectorize(_y),
-        np.vectorize(_z),
+        np.vectorize(_x.__get__(object)),
+        np.vectorize(_y.__get__(object)),
+        np.vectorize(_z.__get__(object)),
     )
     partial_u_expression: Expression = (-sym.sin(u), sym.cos(u), sym.sympify(0))
     partial_v_expression: Expression = (sym.sympify(0), sym.sympify(0), sym.sympify(1))
     normal_expression: Expression = (sym.cos(u), sym.sin(u), sym.sympify(0))
     normal_vectorization: Vectorization = (
-        np.vectorize(_normal_x),
-        np.vectorize(_normal_y),
-        np.vectorize(_normal_z),
+        np.vectorize(_normal_x.__get__(object)),
+        np.vectorize(_normal_y.__get__(object)),
+        np.vectorize(_normal_z.__get__(object)),
     )
     u_range: Range = (0, 2 * np.pi)
     v_range: Range = (-1, 1)
@@ -216,9 +216,9 @@ class HyperbolicParaboloidParameterization(Parameterization):
 
     expression: Expression = (u, v, u * v)
     vectorization: Vectorization = (
-        np.vectorize(_x),
-        np.vectorize(_y),
-        np.vectorize(_z),
+        np.vectorize(_x.__get__(object)),
+        np.vectorize(_y.__get__(object)),
+        np.vectorize(_z.__get__(object)),
     )
     partial_u_expression: Expression = (sym.sympify(1), sym.sympify(0), v)
     partial_v_expression: Expression = (sym.sympify(0), sym.sympify(1), u)
@@ -228,9 +228,9 @@ class HyperbolicParaboloidParameterization(Parameterization):
         -0.5 * sym.sin(2 * v),
     )
     normal_vectorization: Vectorization = (
-        np.vectorize(_normal_x),
-        np.vectorize(_normal_y),
-        np.vectorize(_normal_z),
+        np.vectorize(_normal_x.__get__(object)),
+        np.vectorize(_normal_y.__get__(object)),
+        np.vectorize(_normal_z.__get__(object)),
     )
     u_range: Range = (-2, 2)
     v_range: Range = (-2, 2)
@@ -272,9 +272,9 @@ class HyperboloidParameterization(Parameterization):
         sym.sinh(u),
     )
     vectorization: Vectorization = (
-        np.vectorize(_x),
-        np.vectorize(_y),
-        np.vectorize(_z),
+        np.vectorize(_x.__get__(object)),
+        np.vectorize(_y.__get__(object)),
+        np.vectorize(_z.__get__(object)),
     )
     partial_u_expression: Expression = (
         sym.sinh(u) * sym.cos(v),
@@ -292,9 +292,9 @@ class HyperboloidParameterization(Parameterization):
         0.5 * sym.sinh(2 * u),
     )
     normal_vectorization: Vectorization = (
-        np.vectorize(_normal_x),
-        np.vectorize(_normal_y),
-        np.vectorize(_normal_z),
+        np.vectorize(_normal_x.__get__(object)),
+        np.vectorize(_normal_y.__get__(object)),
+        np.vectorize(_normal_z.__get__(object)),
     )
     u_range: Range = (-2 * np.pi, 2 * np.pi)
     v_range: Range = (0, 2 * np.pi)
@@ -332,9 +332,9 @@ class MonkeySaddleParameterization(Parameterization):
 
     expression: Expression = (u, v, u**3 - 3 * u * v**2)
     vectorization: Vectorization = (
-        np.vectorize(_x),
-        np.vectorize(_y),
-        np.vectorize(_z),
+        np.vectorize(_x.__get__(object)),
+        np.vectorize(_y.__get__(object)),
+        np.vectorize(_z.__get__(object)),
     )
     partial_u_expression: Expression = (
         sym.sympify(1),
@@ -348,9 +348,9 @@ class MonkeySaddleParameterization(Parameterization):
         sym.sympify(1),
     )
     normal_vectorization: Vectorization = (
-        np.vectorize(_normal_x),
-        np.vectorize(_normal_y),
-        np.vectorize(_normal_z),
+        np.vectorize(_normal_x.__get__(object)),
+        np.vectorize(_normal_y.__get__(object)),
+        np.vectorize(_normal_z.__get__(object)),
     )
     u_range: Range = (-3, 3)
     v_range: Range = (-3, 3)
@@ -388,9 +388,9 @@ class ParaboloidParameterization(Parameterization):
 
     expression: Expression = (v * sym.cos(u), v * sym.sin(u), -(v**2))
     vectorization: Vectorization = (
-        np.vectorize(_x),
-        np.vectorize(_y),
-        np.vectorize(_z),
+        np.vectorize(_x.__get__(object)),
+        np.vectorize(_y.__get__(object)),
+        np.vectorize(_z.__get__(object)),
     )
     partial_u_expression: Expression = (-v * sym.sin(u), v * sym.cos(u), sym.sympify(0))
     partial_v_expression: Expression = (sym.cos(u), sym.sin(u), -2 * v)
@@ -400,9 +400,9 @@ class ParaboloidParameterization(Parameterization):
         -v,
     )
     normal_vectorization: Vectorization = (
-        np.vectorize(_normal_x),
-        np.vectorize(_normal_y),
-        np.vectorize(_normal_z),
+        np.vectorize(_normal_x.__get__(object)),
+        np.vectorize(_normal_y.__get__(object)),
+        np.vectorize(_normal_z.__get__(object)),
     )
     u_range: Range = (0, 2 * np.pi)
     # 0.01 is used to avoid singular point.
@@ -445,9 +445,9 @@ class RingTorusParameterization(Parameterization):
         sym.sin(u),
     )
     vectorization: Vectorization = (
-        np.vectorize(_x),
-        np.vectorize(_y),
-        np.vectorize(_z),
+        np.vectorize(_x.__get__(object)),
+        np.vectorize(_y.__get__(object)),
+        np.vectorize(_z.__get__(object)),
     )
     partial_u_expression: Expression = (
         -sym.sin(u) * sym.cos(v),
@@ -465,9 +465,9 @@ class RingTorusParameterization(Parameterization):
         -(3 + sym.cos(u)) * sym.sin(u),
     )
     normal_vectorization: Vectorization = (
-        np.vectorize(_normal_x),
-        np.vectorize(_normal_y),
-        np.vectorize(_normal_z),
+        np.vectorize(_normal_x.__get__(object)),
+        np.vectorize(_normal_y.__get__(object)),
+        np.vectorize(_normal_z.__get__(object)),
     )
     u_range: Range = (0, 2 * np.pi)
     v_range: Range = (0, 2 * np.pi)
@@ -509,9 +509,9 @@ class SphereParameterization(Parameterization):
         sym.cos(v),
     )
     vectorization: Vectorization = (
-        np.vectorize(_x),
-        np.vectorize(_y),
-        np.vectorize(_z),
+        np.vectorize(_x.__get__(object)),
+        np.vectorize(_y.__get__(object)),
+        np.vectorize(_z.__get__(object)),
     )
     partial_u_expression: Expression = (
         -sym.sin(u) * sym.sin(v),
@@ -529,9 +529,9 @@ class SphereParameterization(Parameterization):
         -sym.cos(v) * sym.sin(v),
     )
     normal_vectorization: Vectorization = (
-        np.vectorize(_normal_x),
-        np.vectorize(_normal_y),
-        np.vectorize(_normal_z),
+        np.vectorize(_normal_x.__get__(object)),
+        np.vectorize(_normal_y.__get__(object)),
+        np.vectorize(_normal_z.__get__(object)),
     )
     u_range: Range = (0, 2 * np.pi)
     # 0.01 is used to avoid the two singular points at the poles.
