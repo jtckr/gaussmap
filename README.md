@@ -49,12 +49,12 @@ python -m pip install .
 
 To run one of the example scenes use the `run-scene` shell script.
 ```sh
-./run-scene scenes/CylinderScene.py
+./bin/run-scene scenes/CylinderScene.py
 ```
 
 To use your own custom parameteric surface run
 ```sh
-./run-scene scenes/CustomScene.py
+./bin/run-scene scenes/CustomScene.py
 ```
 then enter in your parameterization using `u`, `v` as your variables as well as
 trigonometric, hyperbolic, and exponential functions, and Python math
@@ -64,7 +64,7 @@ and `v` values.
 
 A list of options for the `run-scene` script can be found by running
 ```sh
-./run-scene -h
+./bin/run-scene -h
 ```
 
 ## Testing
