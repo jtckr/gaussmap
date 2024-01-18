@@ -21,13 +21,11 @@ jobs:
       - name: Install system dependencies
         run: |
           sudo apt update && \
-            sudo apt install -y libcairo2-dev libpango1.0-dev ffmpeg \
-            python3-numpy python3-sympy mypy isort python3-pytest \
-            python3-pytest-cov
+            sudo apt install -y libcairo2-dev libpango1.0-dev ffmpeg
 
       - name: Install package dependencies
         run: |
-          python -m pip install .
+          python -m pip install .[test,coverage,style]
 
       - name: Lint with Mypy, isort
         run: |
