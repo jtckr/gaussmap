@@ -1,7 +1,7 @@
 # Gauss map
 
 [![GitHub license](https://img.shields.io/github/license/jtckr/gaussmap)](https://github.com/jtckr/gaussmap/blob/main/LICENSE)
-[![Coveralls branch](https://img.shields.io/coverallsCoverage/github/jtckr/gaussmap)](https://coveralls.io/github/jtckr/gaussmap)
+![Code coverage](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/jtckr/7be5f58c655e9488e8944068ea14f294/raw/coverage.json)
 [![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/jtckr/gaussmap/ci.yml)](https://github.com/jtckr/gaussmap/actions/workflows/ci.yml)
 
 
