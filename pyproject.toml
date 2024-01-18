@@ -54,6 +54,9 @@ notebook = ["notebook"]
 [tool.setuptools]
 packages = ["gaussmap"]
 
+[tool.isort]
+profile = "black"
+
 [[tool.mypy.overrides]]
 module = ["manim", "sympy"]
 ignore_missing_imports = true
