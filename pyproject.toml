@@ -1,0 +1,60 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gaussmap"
+version = "1.0.0"
+dependencies = [
+    "manim>=0.10.0",
+    "numpy>=1.21.0",
+    "sympy>=1.1",
+]
+requires-python = ">=3.7"
+authors = [
+    {name = "Jeffrey Tucker", email = "jtckr@mathbf.com"},
+]
+description = "A package that generates Gauss map animations"
+readme = "README.md"
+license = {file = "LICENSE"}
+keywords = ["gauss", "gaussmap", "gauss map", "manim", "math"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Framework :: Jupyter",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: English",
+    "Operating System :: POSIX",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Scientific/Engineering :: Mathematics",
+    "Topic :: Scientific/Engineering :: Visualization",
+    "Topic :: Multimedia :: Graphics",
+    "Topic :: Multimedia :: Graphics :: 3D Rendering",
+    "Topic :: Multimedia :: Video",
+]
+
+[project.urls]
+Repository = "https://github.com/jtckr/gaussmap"
+Issues = "https://github.com/jtckr/gaussmap/issues"
+
+[project.optional-dependencies]
+test = ["pytest"]
+coverage = ["pytest-cov"]
+style = ["mypy", "isort"]
+notebook = ["notebook"]
+
+[tool.setuptools]
+packages = ["gaussmap"]
+
+[[tool.mypy.overrides]]
+module = ["manim"]
+ignore_missing_imports = true

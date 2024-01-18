@@ -1,0 +1,43 @@
+name: CI
+
+on: [push, pull_request, workflow_dispatch]
+
+jobs:
+  test:
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        python: ['3.7', '3.8', '3.9', '3.10', '3.11', '3.12']
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@latest
+
+      - name: Setup Python
+        uses: actions/setup-python@latest
+        with:
+          python-version: ${{ matrix.python }}
+
+      - name: Install system dependencies
+        run: |
+          sudo apt install -y libcairo2-dev libpango1.0-dev ffmpeg \
+            numpy sympy mypy isort pytest python-pytest-cov
+
+      - name: Install package dependencies
+        run: |
+          python -m pip install .
+
+      - name: Lint with Mypy, isort
+        run: |
+          mypy gaussmap tests scenes
+          isort -c .
+
+      - name: Test with pytest
+        run: |
+          pytest --cov=gaussmap --cov-report xml tests
+
+      - name: Coveralls
+        uses: coverallsapp/github-action@latest
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path-to-lcov: coverage.xml

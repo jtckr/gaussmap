@@ -1,0 +1,43 @@
+#!/bin/sh
+
+version() {
+	printf "Manim scene runner version 1.0.0\n"
+	printf "Copyright 2024 Jeffrey Tucker\n"
+}
+
+usage() {
+	printf "usage: run-scene [options] [scene]\n\n"
+	printf "'scene' is a Python file that has a subclass of manim.Scene\n\n"
+	printf "Options:\n"
+	printf -- "-h\tdisplay this help and exit\n"
+	printf -- "-v\tdisplay the version information and exit\n"
+}
+
+while getopts h name
+do
+	case $name in
+		h)	version
+			usage
+			exit 1
+	   		;;
+		v)	version
+			exit 1
+			;;
+	esac
+done
+
+scene=$1
+
+if [ -z $scene ]
+then
+	printf "Missing scene argument\n"
+	usage
+fi
+
+if command -v python3 >/dev/null 2>&1
+then
+	python3 -m manim --renderer=opengl --write_to_movie --format=webm $scene
+else
+	printf "python3 not found in PATH\n"
+	exit 2
+fi
