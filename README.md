@@ -1,9 +1,16 @@
 # Gauss map
 
+[![GitHub license](https://img.shields.io/github/license/jtckr/gaussmap)](https://github.com/jtckr/gaussmap/blob/main/LICENSE)
+[![Coveralls branch](https://img.shields.io/coverallsCoverage/github/jtckr/gaussmap)](https://coveralls.io/github/jtckr/gaussmap)
+[![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/jtckr/gaussmap/ci.yml)](https://github.com/jtckr/gaussmap/actions/workflows/ci.yml)
+
+
 `gaussmap` is a Python package that generates
 [Manim](https://www.manim.community) animations showing the
 [Gauss map](https://en.wikipedia.org/wiki/Gauss_map) transformation of a
 parameteric surface in 3D.
+
+![Catenoid animation](assets/catenoid_scene.gif)
 
 ## Dependencies
 
@@ -42,13 +49,18 @@ python -m pip install .
 
 To run one of the example scenes use the `run-scene` shell script.
 ```sh
-./run-scene ./scenes/CylinderScene.py
+./run-scene scenes/CylinderScene.py
 ```
 
 To use your own custom parameteric surface run
 ```sh
-./run-scene ./scenes/CustomScene.py
+./run-scene scenes/CustomScene.py
 ```
+then enter in your parameterization using `u`, `v` as your variables as well as
+trigonometric, hyperbolic, and exponential functions, and Python math
+operators. You can see some example parameterizations under
+`gaussmap/parameterizations.py`. Then you enter your minimum and maximum `u`
+and `v` values.
 
 A list of options for the `run-scene` script can be found by running
 ```sh
@@ -64,12 +76,12 @@ python -m pip install .[test,coverage,style]
 
 Then run the tests using
 ```sh
-pytest ./tests
+pytest
 ```
 
 To do code coverage reports run
 ```sh
-pytest --cov=gaussmap ./tests
+pytest --cov=gaussmap
 ```
 
 Type hints can be checked using
