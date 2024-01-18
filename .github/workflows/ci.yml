@@ -21,7 +21,7 @@ jobs:
       - name: Install system dependencies
         run: |
           sudo apt update && \
-            sudo apt install -y libcairo2-dev libpango1.0-dev ffmpeg python3-setuptools
+            sudo apt install -y libcairo2-dev libpango1.0-dev ffmpeg
 
       - name: Install package dependencies
         run: |
